@@ -1,5 +1,6 @@
 import sys
 from math import factorial
+from math import sqrt
 
 def calculateFactorial(num):
     x = range(0, num)
@@ -9,9 +10,41 @@ def calculateFactorial(num):
     for i in range(num):
         print({i},"-", {f[i]}, "-", {l[i]} )
 
+def calculateFactorialinloop(num):
+    for i in range(num):
+        print({i}, "=", factorial(i), "=", len(str(factorial(i))))
+
+def calculateFibonacci(num):
+    if num>1:
+        sum = calculateFibonacci(num - 2) + calculateFibonacci(num -1)
+        print('fab(',{num},') = ',{sum})
+        return sum
+    print('fab(',{num},') = ',{num})
+    return num
+
+
+def isPrime(x):
+    if x < 2:
+        return False
+    for i in range(2, int(sqrt(x)) + 1):
+        if x % i == 0:
+            return False
+    print(x)
+    return True
+
+
+def printPrime(num):
+    y = [x for x in range(num) if isPrime(x)]
+    for item in y:
+        print(item)
+
+
 def main(x):
     try:
-        calculateFactorial((x))
+        #calculateFactorial(x)
+        #calculateFactorialinloop((x))
+        #calculateFibonacci(x)
+        printPrime(x)
     except ValueError as e:
         print(e, file=sys.stderr)
     print("Continues")
