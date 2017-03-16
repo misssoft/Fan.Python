@@ -22,7 +22,16 @@ def calculateFibonacci(num):
     print('fab(',{num},') = ',{num})
     return num
 
-
+def calculateFiboFaster(num):
+    if (num>=1):
+        a, b = 0,1
+        counter = 0
+        while counter < num:
+            counter = counter + 1
+            a,b = b, a+b
+            print('fab(',counter,') = ',{b})
+    a,b = 0,0
+    
 def isPrime(x):
     if x < 2:
         return False
@@ -44,7 +53,8 @@ def main(x):
         #calculateFactorial(x)
         #calculateFactorialinloop((x))
         #calculateFibonacci(x)
-        printPrime(x)
+        calculateFiboFaster(x)
+        #printPrime(x)
     except ValueError as e:
         print(e, file=sys.stderr)
     print("Continues")
