@@ -36,7 +36,7 @@ class Flight:
         letter = seat[-1]
 
         if letter not in seat_letters:
-            raise ValueError("Invalid seat letter {}".formmat(letter))
+            raise ValueError("Invalid seat letter {}".format(letter))
 
         row_text = seat[:-1]
         try:
